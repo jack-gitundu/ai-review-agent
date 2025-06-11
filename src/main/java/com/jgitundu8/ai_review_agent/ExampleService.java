@@ -1,6 +1,7 @@
 package com.jgitundu8.ai_review_agent;
 
 import java.util.List;
+import java.io.*;
 
 /**
  * @author Jackson G. Mwaniki
@@ -52,5 +53,9 @@ public class ExampleService {
             x = x - 2;
         }
         System.out.println(x);
+    }
+
+    public void TestMethodStandards() {
+        System.out.println("Test method standards");
     }
 }
