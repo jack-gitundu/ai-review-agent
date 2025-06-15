@@ -2,9 +2,11 @@ package com.jgitundu8.ai_review_agent;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@SpringBootTest
 class ExampleServiceTest {
 
     /**
