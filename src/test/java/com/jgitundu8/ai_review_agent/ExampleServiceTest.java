@@ -6,7 +6,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
 class ExampleServiceTest {
 
     /**
@@ -17,7 +16,7 @@ class ExampleServiceTest {
      */
 
     @Test
-    void login_WithValidCredentials_ReturnsTrue() {
+    void loginWithValidCredentialsReturnsTrue() {
         // Arrange
         ExampleService exampleService = new ExampleService();
         String validUsername = "admin";
@@ -31,7 +30,7 @@ class ExampleServiceTest {
     }
 
     @Test
-    void login_WithInvalidPassword_ReturnsFalse() {
+    void loginWithInvalidPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
         String validUsername = "admin";
@@ -45,7 +44,7 @@ class ExampleServiceTest {
     }
 
     @Test
-    void login_WithInvalidUsername_ReturnsFalse() {
+    void loginWithInvalidUsernameReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
         String invalidUsername = "user";
@@ -59,7 +58,7 @@ class ExampleServiceTest {
     }
 
     @Test
-    void login_WithInvalidUsernameAndPassword_ReturnsFalse() {
+    void loginWithInvalidUsernameAndPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
         String invalidUsername = "user";
