@@ -1,10 +1,10 @@
 package com.jgitundu8.ai_review_agent;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.beans.factory.annotation.Value;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ExampleServiceTest {
 
@@ -15,12 +15,24 @@ class ExampleServiceTest {
      * which validates a username and password against hardcoded admin credentials.
      */
 
+    @Value("${login.valid-username}")
+    private String validUsername;
+
+    @Value("${login.valid-password}")
+    private String validPassword;
+
+    @Value("${login.invalid-username}")
+    private String invalidUsername;
+
+    @Value("${login.invalid-password}")
+    private String invalidPassword;
+
     @Test
     void loginWithValidCredentialsReturnsTrue() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String validUsername = "admin";
-        String validPassword = "123456";
+        String validUsername = this.validUsername;
+        String validPassword = this.validPassword;
 
         // Act
         boolean result = exampleService.login(validUsername, validPassword);
@@ -33,8 +45,8 @@ class ExampleServiceTest {
     void loginWithInvalidPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String validUsername = "admin";
-        String invalidPassword = "wrongpassword";
+        String validUsername = this.validUsername;
+        String invalidPassword = this.invalidPassword;
 
         // Act
         boolean result = exampleService.login(validUsername, invalidPassword);
@@ -47,8 +59,8 @@ class ExampleServiceTest {
     void loginWithInvalidUsernameReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String invalidUsername = "user";
-        String validPassword = "123456";
+        String invalidUsername = this.invalidUsername;
+        String validPassword = this.validPassword;
 
         // Act
         boolean result = exampleService.login(invalidUsername, validPassword);
@@ -61,8 +73,8 @@ class ExampleServiceTest {
     void loginWithInvalidUsernameAndPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String invalidUsername = "user";
-        String invalidPassword = "wrongpassword";
+        String invalidUsername = this.invalidUsername;
+        String invalidPassword = this.invalidPassword;
 
         // Act
         boolean result = exampleService.login(invalidUsername, invalidPassword);
