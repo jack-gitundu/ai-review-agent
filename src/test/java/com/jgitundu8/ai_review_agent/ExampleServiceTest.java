@@ -2,10 +2,12 @@ package com.jgitundu8.ai_review_agent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@SpringBootTest
 class ExampleServiceTest {
 
     /**
@@ -31,8 +33,6 @@ class ExampleServiceTest {
     void loginWithValidCredentialsReturnsTrue() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String validUsername = this.validUsername;
-        String validPassword = this.validPassword;
 
         // Act
         boolean result = exampleService.login(validUsername, validPassword);
@@ -45,8 +45,6 @@ class ExampleServiceTest {
     void loginWithInvalidPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String validUsername = this.validUsername;
-        String invalidPassword = this.invalidPassword;
 
         // Act
         boolean result = exampleService.login(validUsername, invalidPassword);
@@ -59,8 +57,6 @@ class ExampleServiceTest {
     void loginWithInvalidUsernameReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String invalidUsername = this.invalidUsername;
-        String validPassword = this.validPassword;
 
         // Act
         boolean result = exampleService.login(invalidUsername, validPassword);
@@ -73,8 +69,6 @@ class ExampleServiceTest {
     void loginWithInvalidUsernameAndPasswordReturnsFalse() {
         // Arrange
         ExampleService exampleService = new ExampleService();
-        String invalidUsername = this.invalidUsername;
-        String invalidPassword = this.invalidPassword;
 
         // Act
         boolean result = exampleService.login(invalidUsername, invalidPassword);
