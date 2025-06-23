@@ -7,6 +7,7 @@ import java.io.*;
  * @author Jackson G. Mwaniki
  */
 public class ExampleService {
+
     public void doSomething() {
         // TODO: Add authentication check
         System.out.println("Doing something risky...");
@@ -58,5 +59,4 @@ public class ExampleService {
     public void TestMethodStandards() {
         System.out.println("Test method standards");
     }
-
 }
